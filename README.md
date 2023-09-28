@@ -21,11 +21,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Operating Systems Used </h2>
 
 - Windows 10 (21H2)
-- Ubuntu Server 20.04
+- Linux "Ubuntu" Server 20.04
 
 <h2>The Set-Up</h2>
 
-Within Azure, I created two VMs within the same virtual network to ensure that they are able to communicate with each other. One VM will have Windows 10 Pro while the other uses Ubuntu. The Windows VM will connect to the other via the command line/PowerShell. 
+Within Azure, I created two VMs within the same virtual network to ensure that they are able to communicate with each other. One VM will have Windows 10 Pro while the other uses Linux "Ubuntu". The Windows VM will connect to the other via the command line/PowerShell. 
 
 <h2>Actions and Observations</h2>
 
@@ -41,7 +41,7 @@ Using Remote Desktop Connection, I connect to the Windows VM using its public IP
 <img src="https://i.imgur.com/HPsYyps.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
-Within Wireshark, I filtered for ICMP (Internet Control Message Protocol) traffic and opened PowerShell to execute a command called ping. Ping utilizes ICMP, which is used by devices in a network to communicate problems within data transmition. I used ping to see if I can communicate with the Ubuntu VM using its private IP address and with google.com. Afterwards, I used a perpetual ping to the Ubuntu VM in order to see how network security groups work. 
+Within Wireshark, I filtered for ICMP (Internet Control Message Protocol) traffic and opened PowerShell to execute a command called ping. Ping utilizes ICMP, which is used by devices in a network to communicate problems within data transmition. I used ping to see if I can communicate with the Linux "Ubuntu" VM using its private IP address and with google.com. Afterwards, I used a perpetual ping to the Linux "Ubuntu" VM in order to see how network security groups work. 
 </p>
 <br />
 
@@ -49,7 +49,7 @@ Within Wireshark, I filtered for ICMP (Internet Control Message Protocol) traffi
 <img src="https://i.imgur.com/VADCtAe.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
-Within the Azure portal, I opened the networking settings for the Ubuntu VM and added an inbound security rule to block ICMP traffic. I make sure to have the priority higher than SSH (300) to ensure the rule applies first. 
+Within the Azure portal, I opened the networking settings for the Linux "Ubuntu" VM and added an inbound security rule to block ICMP traffic. I make sure to have the priority higher than SSH (300) to ensure the rule applies first. 
 </p>
 <br />
 
@@ -65,7 +65,7 @@ Upon returning to the Windows VM, I notice that the ICMP traffic is blocked now 
 <img src="https://i.imgur.com/lacuTeO.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
-Next, I chose to examine SSH traffic. I logged in to the Ubuntu server via PowerShell with the ssh command. With Wireshark, I filtered the traffic with tcp.port. While logged into the Ubuntu server, my session is logged in Wireshark with each command I use.
+Next, I chose to examine SSH traffic. I logged in to the Linux "Ubuntu" server via PowerShell with the ssh command. With Wireshark, I filtered the traffic with tcp.port. While logged into the Ubuntu server, my session is logged in Wireshark with each command I use.
 </p>
 <br />
 
@@ -73,7 +73,7 @@ Next, I chose to examine SSH traffic. I logged in to the Ubuntu server via Power
 <img src="https://i.imgur.com/NLKm7yq.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
-After examining SSH traffic, I exited the Ubuntu server in order to filter for DHCP traffic. To see it in action, I decided to attempt to issue a new IP address from my VM. The command ipconfig /renew will attempt to issue the new IP address and will temporarily disconnect me for a few seconds. After reconnecting, the resulting traffic is shown in Wireshark.
+After examining SSH traffic, I exited the Linux "Ubuntu" server in order to filter for DHCP traffic. To see it in action, I decided to attempt to issue a new IP address from my VM. The command ipconfig /renew will attempt to issue the new IP address and will temporarily disconnect me for a few seconds. After reconnecting, the resulting traffic is shown in Wireshark.
 </p>
 <br />
 
@@ -81,7 +81,7 @@ After examining SSH traffic, I exited the Ubuntu server in order to filter for D
 <img src="https://i.imgur.com/vbMf6VV.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
-To finish my lab, I decided to observeDNS traffic, I used the command nslookup. I wanted to see the results that are from looking up google.com a very popular sites. 
+To finish my lab, I decided to observeDNS traffic, I used the command nslookup. I wanted to see the results that are from looking up google.com a very popular site. 
 </p>
 <br />
 
