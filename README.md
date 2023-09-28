@@ -25,10 +25,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1: Create a Resource Group
-- Step 2: Create a Windows 10 Virtual Machine (VM) 
-- Step 3: Create a Linux (Ubuntu) VM
-- Step 4
+- Step 1: Create Resource Group 
+- Step 2: Create Windpws 10 Virtual Machine (VM)
+- Step 3: Create Linux (Ubuntu) VM
+- Step 4: Observe Your Virtual Network within Network Watcher
 
 <h2>Actions and Observations</h2>
 
