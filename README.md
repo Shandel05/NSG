@@ -78,7 +78,7 @@ After examining SSH traffic, I exited the Ubuntu server in order to filter for D
 <br />
 
 <p>
-<img src="https://i.imgur.com/gj81My7.png" height="80%" width="80%" alt="Azure Networking Steps"/>
+<img src="https://i.imgur.com/vbMf6VV.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
 To finish my lab, I decided to observeDNS traffic, I used the command nslookup. I wanted to see the results that are from looking up google.com a very popular sites. 
