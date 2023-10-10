@@ -42,7 +42,7 @@ Within Wireshark, I filtered for ICMP (Internet Control Message Protocol) traffi
 <br />
 
 <p>
-<img src="https://i.imgur.com/VADCtAe.png" height="80%" width="80%" alt="Azure Networking Steps"/>
+<img src="https://i.imgur.com/xGBAffc.png" height="80%" width="80%" alt="Azure Networking Steps"/>
 </p>
 <p>
 Within the Azure portal, I opened the networking settings for the Linux "Ubuntu" VM and added an inbound security rule to block ICMP traffic. I make sure to have the priority higher than SSH (300) to ensure the rule applies first. 
